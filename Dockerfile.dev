@@ -1,0 +1,12 @@
+# Base image
+FROM node:14-alpine
+
+# Prepare environment
+WORKDIR '/app'
+
+COPY package.json .
+RUN npm install
+COPY . .
+
+# Run command
+CMD ["npm", "run", "start"]
